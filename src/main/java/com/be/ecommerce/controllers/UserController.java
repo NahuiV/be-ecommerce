@@ -37,5 +37,7 @@ public class UserController {
     @PutMapping(value = "{id}")
     @ResponseStatus(HttpStatus.OK)
     public void updateUser(@PathVariable("id") Long id){
+
+
     }
 }
