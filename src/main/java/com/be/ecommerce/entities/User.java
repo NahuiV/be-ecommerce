@@ -9,7 +9,10 @@ import java.time.LocalDate;
 @Entity
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @ToString
+@EqualsAndHashCode
 @Table(name = "user")
 public class User {
     @Id

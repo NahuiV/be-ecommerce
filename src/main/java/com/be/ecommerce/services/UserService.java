@@ -2,8 +2,8 @@ package com.be.ecommerce.services;
 
 import com.be.ecommerce.constants.Constants;
 import com.be.ecommerce.entities.User;
-import com.be.ecommerce.exceptions.UserExistsException;
-import com.be.ecommerce.exceptions.UserNotFoundException;
+import com.be.ecommerce.exceptions.user.UserExistsException;
+import com.be.ecommerce.exceptions.user.UserNotFoundException;
 import com.be.ecommerce.repositories.UserRepository;
 import org.springframework.stereotype.Service;
 
