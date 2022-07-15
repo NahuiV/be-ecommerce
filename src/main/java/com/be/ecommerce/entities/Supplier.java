@@ -1,20 +1,31 @@
 package com.be.ecommerce.entities;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
 import java.util.List;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
-@EqualsAndHashCode
 @Entity(name = "Supplier")
 @Table(name = "supplier")
-public class Supplier extends Address {
+public class Supplier{
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "phone")
     private String phone;
@@ -34,4 +45,7 @@ public class Supplier extends Address {
     @OneToMany(targetEntity = Product.class)
     @JoinColumn(name = "supplier_id",referencedColumnName = "id")
     private List<Product> products;
+
+    @OneToOne(targetEntity = Address.class)
+    private Address address;
 }

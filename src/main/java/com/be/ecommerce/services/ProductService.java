@@ -3,7 +3,6 @@ package com.be.ecommerce.services;
 import com.be.ecommerce.constants.Constants;
 import com.be.ecommerce.entities.Product;
 import com.be.ecommerce.exceptions.product.ProductNotFoundException;
-import com.be.ecommerce.exceptions.user.UserNotFoundException;
 import com.be.ecommerce.repositories.ProductRepository;
 import org.springframework.stereotype.Service;
 
