@@ -1,5 +1,6 @@
 package com.be.ecommerce.dto;
 
+import com.be.ecommerce.entities.Address;
 import lombok.Data;
 
 import java.math.BigDecimal;
@@ -12,5 +13,6 @@ public class ShipperDTO {
     private String phone;
     private String url;
     private BigDecimal taxes;
+    private Address address;
 
 }

@@ -24,6 +24,7 @@ public class ShipperService {
         if(optionalShipper.isPresent()){
             throw new ShipperExistsException(Constants.SHIPPER_EXISTS + shipper.getPhone());
         }
+        shipperRepository.save(shipper);
     }
 
     public void deleteShipper(Long id){
@@ -42,6 +43,11 @@ public class ShipperService {
         }
         return shipper.get();
 
+    }
+
+    public void saveShipper(Shipper shipper){
+
+        shipperRepository.save(shipper);
     }
 
     public List<Shipper> getAllUsers(){
