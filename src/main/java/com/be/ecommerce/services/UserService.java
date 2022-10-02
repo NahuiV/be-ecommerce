@@ -6,6 +6,7 @@ import com.be.ecommerce.exceptions.user.UserExistsException;
 import com.be.ecommerce.exceptions.user.UserNotFoundException;
 import com.be.ecommerce.repositories.UserRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -41,7 +42,8 @@ public class UserService {
         return user.get();
      }
 
-    public List<User> getAllUsers(){
+    @Transactional(readOnly = true)
+     public List<User> getAllUsers(){
         return userRepository.findAll();
     }
 }
