@@ -26,11 +26,10 @@ public class ProductController {
         productService.addProduct(product);
     }
 
-    @GetMapping
+    @GetMapping("{id}")
     @ResponseStatus(HttpStatus.OK)
     public ProductDTO getProduct(@PathVariable("id") Long id){
-        Product product= productService.getProduct(id);
-        return productMapper.convertToDto(product);
+        return productService.getProduct(id);
     }
 
     @PutMapping(value = "{id}")
