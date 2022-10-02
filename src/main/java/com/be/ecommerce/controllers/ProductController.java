@@ -12,18 +12,15 @@ import org.springframework.web.bind.annotation.*;
 public class ProductController {
 
     private final ProductService productService;
-    private final ProductMapper productMapper;
 
     public ProductController(ProductService productService, ProductMapper productMapper){
         this.productService = productService;
-        this.productMapper = productMapper;
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void createProduct(@RequestBody ProductDTO productDTO){
-        Product product = productMapper.convertToEntity(productDTO);
-        productService.addProduct(product);
+        productService.addProduct(productDTO);
     }
 
     @GetMapping("{id}")
